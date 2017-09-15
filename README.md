@@ -1,3 +1,36 @@
+# Git merge conflict example
+
+## Instructions to see an example of a merge conflict
+
+In the master branch, run:
+
+```
+$ git merge branch-a
+```
+
+Then, run:
+
+```
+$ git merge branch-b
+```
+
+You'll see a message like this:
+
+```
+Auto-merging src/App.js
+CONFLICT (content): Merge conflict in src/App.js
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+This happened because the code in the different branches modifies approximately the same lines of the same file. Git doesn't know what to do, so it makes us do it. Open up the App.js file and do the clean up yourself, by keeping one block of code and removing the other, or whatever is appropriate. VS Code has nice helpers for this that show automatically when you view the file.
+
+Then, to comlete the merge, do a `git add src/App.js`, and then `git commit -m "[fixed conflict by removing section A but keeping section B]"`.
+
+Tada, you have resolved the merge conflict.
+
+
+# Original README content follows
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
